@@ -29,17 +29,17 @@ Usage:
 
 Apache2:
 
-SSLVerifyClient require
-SSLVerifyDepth 2
-SSLCACertificatefile Path/to/your/Certificate/chain
-SSLCARevocationCheck chain
-SSLCARevocationFile Path/to/your/ca/crl
+SSLVerifyClient require  
+SSLVerifyDepth 2  
+SSLCACertificatefile Path/to/your/Certificate/chain  
+SSLCARevocationCheck chain  
+SSLCARevocationFile Path/to/your/ca/crl  
 
 Nginx:
 
-ssl_client_certificate Path/to/your/Certificate/chain;
-ssl_crl Path/to/your/ca/crl;
-ssl_verify_client on;
+ssl_client_certificate Path/to/your/Certificate/chain;  
+ssl_crl Path/to/your/ca/crl;  
+ssl_verify_client on;  
 
 
 To do:

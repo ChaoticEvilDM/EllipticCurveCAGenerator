@@ -6,15 +6,15 @@ OpenSSL 1.0.2g or better. It'll work with any version that supports the EC in qu
 
 Files:
 openssl.cnf
-	- By default the root CA is valid for 10 years
-	- By default the IM is valid for 5 years
-	- You might want to customize the Certificate Details (C,ST,O,OU,CN)
+- By default the root CA is valid for 10 years
+- By default the IM is valid for 5 years
+- You might want to customize the Certificate Details (C,ST,O,OU,CN)
 
 CreateCA.sh
-	- You might want to customize the CA Details (C,ST,O,OU,CN)
+- You might want to customize the CA Details (C,ST,O,OU,CN)
 
 CreateIM.sh
-	- You might want to customize the IM Details (C,ST,O,OU,CN)
+- You might want to customize the IM Details (C,ST,O,OU,CN)
 
 Usage:
 1. Run PrepareEnv.sh to set up files and folders.
@@ -26,6 +26,21 @@ Usage:
 4. Run CreateCert.sh to generate a cert in the client folder.
 
 5. Run CreatePKCS12.sh to pack it into a .pfx file.
+
+Apache2:
+
+SSLVerifyClient require
+SSLVerifyDepth 2
+SSLCACertificatefile Path/to/your/Certificate/chain
+SSLCARevocationCheck chain
+SSLCARevocationFile Path/to/your/ca/crl
+
+Nginx:
+
+ssl_client_certificate Path/to/your/Certificate/chain;
+ssl_crl Path/to/your/ca/crl;
+ssl_verify_client on;
+
 
 To do:
 - Script for revoking Certs
